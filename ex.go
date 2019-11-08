@@ -6,9 +6,13 @@ import (
 )
 
 var templ = template.Must(template.ParseFiles("index.html"))
+var temp2 = template.Must(template.ParseFiles("contact.html"))
 
 func index(w http.ResponseWriter, r *http.Request) {
 	templ.Execute(w, nil)
+}
+func index2(w http.ResponseWriter, r *http.Request) {
+	temp2.Execute(w, nil)
 }
 func main() {
 	mux := http.NewServeMux()
